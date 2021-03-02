@@ -1,0 +1,47 @@
+header {
+  display: flex;
+  flex-direction: column;
+
+  .ribbon-contacts {
+    color: white;
+    display: flex;
+    height: 3rem;
+    background: linear-gradient(
+      90deg,
+      rgb(98, 175, 194) 0%,
+      rgb(33, 166, 139) 100%
+    );
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+  }
+
+  .search {
+    height: 3rem;
+    display: flex;
+    background-color: white;
+    padding: 0 1vw;
+    align-items: center;
+
+    .search-icon {
+      display: flex;
+      align-items: center;
+      justify-self: flex-start;
+      color: #eee;
+    }
+
+    .search-input {
+      margin-left: 1vw;
+      border: none;
+      font-size: 1.2rem;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+}
