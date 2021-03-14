@@ -1,7 +1,7 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect } from "react";
 import "./ContactList.scss";
 import ContactItem from "../ContactItem";
-import LazyLoad from "react-lazyload";
+import LazyLoad, { forceCheck } from "react-lazyload";
 
 const selectedContactsReducer = (selectedContacts, action) => {
   const newSelectedContacts = [...selectedContacts];
@@ -21,6 +21,10 @@ const ContactList = ({ contacts }) => {
     selectedContactsReducer,
     []
   );
+
+  useEffect(() => {
+    forceCheck();
+  });
 
   return (
     <ul className="contact-list">
