@@ -1,0 +1,10 @@
+*{margin:0;box-sizing:border-box}body{font-family:roboto;background-color:#eee}
+
+header{position:fixed;top:0;width:100vw;display:flex;flex-direction:column;z-index:1}header .ribbon-contacts{color:white;display:flex;height:3rem;background:linear-gradient(90deg, #62afc2 0%, #21a68b 100%);justify-content:center;align-items:center}header .ribbon-contacts h1{font-size:1rem;font-weight:500}header .search{height:3rem;display:flex;background-color:white;padding:0 1vw;align-items:center}header .search .search-icon{display:flex;align-items:center;justify-self:flex-start;color:#ddd}header .search .search-input{width:100%;margin-left:1vw;border:none;font-size:1.2rem}header .search .search-input:focus{outline:0}
+
+.contact-list{padding:0;margin-top:6rem}
+
+.contact-item{display:flex;flex-direction:row;align-items:center;height:4rem;width:100%;padding:0 1vw;border-top:2px solid #ddd;cursor:pointer}.contact-item .contact-avatar{display:flex;justify-content:center;align-items:center;background-color:#fff;height:3rem;width:3rem;border:2px solid #ddd;border-radius:50%;overflow:hidden}.contact-item .contact-avatar .contact-photo{width:100%}.contact-item .contact-avatar .contact-initials{color:#ddd;font-size:1.3rem;font-weight:bold}.contact-item .contact-info{display:flex;flex-direction:column;margin-left:1vw}.contact-item .contact-info .contact-name{font-weight:700}.contact-item .contact-info .contact-email{font-size:0.8rem;color:gray}.contact-item .contact-checkbox{margin-left:auto}
+
+
+/*# sourceMappingURL=4a48267ddbb6d18ab4b7.css.map*/
