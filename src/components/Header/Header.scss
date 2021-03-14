@@ -1,6 +1,10 @@
 header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
   display: flex;
   flex-direction: column;
+  z-index: 1;
 
   .ribbon-contacts {
     color: white;
