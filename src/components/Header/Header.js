@@ -2,17 +2,25 @@ import React, { useState } from "react";
 import "./Header.scss";
 import SearchIcon from "@material-ui/icons/Search";
 
-const Header = ({ data, setFoundData }) => {
-  const [value, setValue] = useState("");
+const Header = ({ contacts, setFilteredContacts }) => {
+  const [inputValue, setInputValue] = useState("");
+  const [typingTimeout, setTypingTimeout] = useState(0);
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
-    setFoundData(() =>
-      data.filter((contact) =>
-        `${contact.first_name} ${contact.last_name}`
-          .toLowerCase()
-          .includes(value.toLowerCase())
-      )
+  const handleInputChange = (event) => {
+    if (typingTimeout) {
+      clearTimeout(typingTimeout);
+    }
+    setInputValue(event.target.value);
+    setTypingTimeout(
+      setTimeout(() => {
+        const filteredContacts = contacts.filter((contact) =>
+          `${contact.first_name} ${contact.last_name}`
+            .toLowerCase()
+            .includes(event.target.value.toLowerCase())
+        );
+        setFilteredContacts(filteredContacts);
+      }),
+      250
     );
   };
 
@@ -30,9 +38,9 @@ const Header = ({ data, setFoundData }) => {
           type="text"
           name="search"
           id="search"
-          placeholder="Search"
-          value={value}
-          onChange={handleChange}
+          placeholder="Search contact"
+          value={inputValue}
+          onChange={handleInputChange}
         />
       </div>
     </header>

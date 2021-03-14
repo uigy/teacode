@@ -1,14 +1,39 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import "./ContactList.scss";
-import ListItem from "./ListItem";
+import ContactItem from "../ContactItem";
+import LazyLoad from "react-lazyload";
 
-const ContactList = ({ data, foundData }) => {
+const selectedContactsReducer = (selectedContacts, action) => {
+  const newSelectedContacts = [...selectedContacts];
+  if (action.type === "select") {
+    newSelectedContacts.push(action.contactID);
+  } else if (action.type === "unselect") {
+    newSelectedContacts.splice(
+      newSelectedContacts.indexOf(action.contactID, 1)
+    );
+  }
+  console.log(newSelectedContacts);
+  return newSelectedContacts;
+};
+
+const ContactList = ({ contacts }) => {
+  const [selectedContacts, dispatchToSelectedContacts] = useReducer(
+    selectedContactsReducer,
+    []
+  );
+
   return (
-    <ol className="contact-list">
-      {foundData.map((contact) => (
-        <ListItem key={contact.id} contact={contact} data={data} />
+    <ul className="contact-list">
+      {contacts.map((contact) => (
+        <LazyLoad height={"4rem"} key={contact.id}>
+          <ContactItem
+            contact={contact}
+            selectedContacts={selectedContacts}
+            dispatchToSelectedContacts={dispatchToSelectedContacts}
+          />
+        </LazyLoad>
       ))}
-    </ol>
+    </ul>
   );
 };
 
