@@ -9,7 +9,7 @@ const ContactItem = ({
 }) => {
   const [checked, setChecked] = useState(selectedContacts.includes(contact.id));
 
-  const handleItemClick = (event, contactID) => {
+  const handleItemClick = (contactID) => {
     setChecked(!checked);
     dispatchToSelectedContacts({
       type: !checked ? "select" : "unselect",
@@ -18,10 +18,7 @@ const ContactItem = ({
   };
 
   return (
-    <li
-      className="contact-item"
-      onClick={(event, contactID) => handleItemClick(event, contact.id)}
-    >
+    <li className="contact-item" onClick={() => handleItemClick(contact.id)}>
       <div className="contact-avatar">
         {contact.avatar ? (
           <img
