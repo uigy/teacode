@@ -2,12 +2,8 @@ import React, { useState } from "react";
 import "./ContactItem.scss";
 import Checkbox from "@material-ui/core/Checkbox";
 
-const ContactItem = ({
-  contact,
-  selectedContacts,
-  dispatchToSelectedContacts,
-}) => {
-  const [checked, setChecked] = useState(selectedContacts.includes(contact.id));
+const ContactItem = ({ contact, isChecked, dispatchToSelectedContacts }) => {
+  const [checked, setChecked] = useState(isChecked);
 
   const handleItemClick = (contactID) => {
     setChecked(!checked);

@@ -33,7 +33,7 @@ const ContactList = ({ contacts }) => {
         <LazyLoad height={"4rem"} key={contact.id}>
           <ContactItem
             contact={contact}
-            selectedContacts={selectedContacts}
+            isChecked={selectedContacts.includes(contact.id)}
             dispatchToSelectedContacts={dispatchToSelectedContacts}
           />
         </LazyLoad>
