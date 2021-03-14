@@ -19,8 +19,7 @@ const Header = ({ contacts, setFilteredContacts }) => {
             .includes(event.target.value.toLowerCase())
         );
         setFilteredContacts(filteredContacts);
-      }),
-      250
+      }, 250)
     );
   };
 
