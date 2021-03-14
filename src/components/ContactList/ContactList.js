@@ -9,7 +9,8 @@ const selectedContactsReducer = (selectedContacts, action) => {
     newSelectedContacts.push(action.contactID);
   } else if (action.type === "unselect") {
     newSelectedContacts.splice(
-      newSelectedContacts.indexOf(action.contactID, 1)
+      newSelectedContacts.indexOf(action.contactID),
+      1
     );
   }
   console.log(newSelectedContacts);
