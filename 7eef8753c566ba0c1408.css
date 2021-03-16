@@ -1,0 +1,10 @@
+*{margin:0;box-sizing:border-box}body{font-family:roboto;background-color:#eee}
+
+@keyframes show-up{from{height:0}to{height:3rem}}header{width:100vw;display:flex;flex-direction:column;z-index:1}header .ribbon-contacts{color:white;display:flex;height:3rem;background:linear-gradient(90deg, #62afc2 0%, #21a68b 100%);justify-content:center;align-items:center}@media (min-width: 1024px){header .ribbon-contacts--come-out{animation:show-up .3s}}header .ribbon-contacts h1{font-size:1rem;font-weight:500}header .search{height:3rem;display:flex;background-color:white;padding:0 3vw;align-items:center}@media (min-width: 1024px){header .search{padding:0 1vw}}header .search--sticky{position:fixed;top:0;width:100%;z-index:1;box-shadow:0 0 1rem #bbb}header .search .search-icon{display:flex;align-items:center;justify-self:flex-start;color:#ddd}header .search .search-input{width:100%;margin-left:1vw;border:none;font-size:1.2rem}header .search .search-input:focus{outline:0}
+
+.contact-list{padding:0}
+
+.contact-item{display:flex;flex-direction:row;align-items:center;height:4rem;width:100%;padding:0 3vw;border-top:2px solid #ddd;overflow-x:hidden;cursor:pointer}@media (min-width: 1024px){.contact-item{padding:0 1vw}}.contact-item .contact-avatar{display:flex;justify-content:center;align-items:center;flex-shrink:0;background-color:#fff;height:3rem;width:3rem;border:2px solid #ddd;border-radius:50%;overflow:hidden}.contact-item .contact-avatar .contact-photo{width:100%}.contact-item .contact-avatar .contact-initials{color:#ddd;font-size:1.3rem;font-weight:bold}.contact-item .contact-info{display:flex;flex-direction:column;margin-left:3vw;overflow:hidden}@media (min-width: 1024px){.contact-item .contact-info{margin-left:1vw}}.contact-item .contact-info .contact-name{font-weight:700;overflow:hidden;text-overflow:ellipsis}.contact-item .contact-info .contact-email{font-size:0.8rem;color:gray;overflow:hidden;text-overflow:ellipsis}.contact-item .contact-checkbox{margin-left:auto}
+
+
+/*# sourceMappingURL=7eef8753c566ba0c1408.css.map*/
