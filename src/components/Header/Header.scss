@@ -1,6 +1,9 @@
+@keyframes show-up {
+  from { height: 0 }
+  to { height: 3rem }
+}
+
 header {
-  position: fixed;
-  top: 0;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -17,6 +20,11 @@ header {
     );
     justify-content: center;
     align-items: center;
+    
+    
+    &--come-out {
+      animation: show-up .3s;
+    }
 
     h1 {
       font-size: 1rem;
@@ -30,6 +38,14 @@ header {
     background-color: white;
     padding: 0 1vw;
     align-items: center;
+
+    &--sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+      box-shadow: 0 0 1rem #bbb;
+    }
 
     .search-icon {
       display: flex;

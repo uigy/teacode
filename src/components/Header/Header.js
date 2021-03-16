@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.scss";
 import SearchIcon from "@material-ui/icons/Search";
 
@@ -22,6 +22,23 @@ const Header = ({ contacts, setFilteredContacts }) => {
       }, 250)
     );
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const search = document.querySelector(".search");
+      const ribbonContacts = document.querySelector(".ribbon-contacts");
+      if (window.scrollY > search.offsetTop) {
+        search.classList.add("search--sticky");
+        ribbonContacts.classList.remove("ribbon-contacts--come-out");
+      } else {
+        search.classList.remove("search--sticky");
+        ribbonContacts.classList.add("ribbon-contacts--come-out");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header>
