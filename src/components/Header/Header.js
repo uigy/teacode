@@ -13,11 +13,24 @@ const Header = ({ contacts, setFilteredContacts }) => {
     setInputValue(event.target.value);
     setTypingTimeout(
       setTimeout(() => {
-        const filteredContacts = contacts.filter((contact) =>
-          `${contact.first_name} ${contact.last_name}`
-            .toLowerCase()
-            .includes(event.target.value.toLowerCase())
-        );
+        const filteredContacts = contacts.filter((contact) => {
+          const firstName = contact.first_name.toLowerCase();
+          const lastName = contact.last_name.toLowerCase();
+          const inputValue = event.target.value.toLowerCase();
+          const fullName = `${firstName} ${lastName}`;
+          if (fullName.startsWith(inputValue)) {
+            return contact;
+          } else if (lastName.startsWith(inputValue)) {
+            return contact;
+          } else {
+            const nameParts = fullName.split(" ");
+            for (const part of nameParts) {
+              if (part.startsWith(inputValue)) {
+                return contact;
+              }
+            }
+          }
+        });
         setFilteredContacts(filteredContacts);
       }, 250)
     );
