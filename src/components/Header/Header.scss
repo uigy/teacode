@@ -4,15 +4,16 @@
 }
 
 header {
-  width: 100vw;
   display: flex;
   flex-direction: column;
+  width: 100%;
   z-index: 1;
 
   .ribbon-contacts {
-    color: white;
+    padding-left: calc(100vw - 100%);
     display: flex;
     height: 3rem;
+    color: white;
     background: linear-gradient(
       90deg,
       rgb(98, 175, 194) 0%,
@@ -20,7 +21,6 @@ header {
     );
     justify-content: center;
     align-items: center;
-    
     
     &--come-out {
       @media(min-width: 1024px){
