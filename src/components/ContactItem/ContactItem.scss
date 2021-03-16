@@ -7,14 +7,20 @@ $contact-avatar-color: #ddd;
   align-items: center;
   height: 4rem;
   width: 100%;
-  padding: 0 1vw;
+  padding: 0 3vw;
   border-top: 2px solid $contact-avatar-color;
+  overflow-x: hidden;
   cursor: pointer;
+
+  @media(min-width: 1024px) {
+    padding: 0 1vw;
+  }
 
   .contact-avatar {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
     background-color: #fff;
     height: $contact-avatar-size;
     width: $contact-avatar-size;
@@ -36,14 +42,24 @@ $contact-avatar-color: #ddd;
   .contact-info {
     display: flex;
     flex-direction: column;
-    margin-left: 1vw;
+    margin-left: 3vw;
+    overflow: hidden;
+    
+    @media(min-width: 1024px) {
+      margin-left: 1vw;
+    }
+
     .contact-name {
       font-weight: 700;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .contact-email {
       font-size: 0.8rem;
       color: gray;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 

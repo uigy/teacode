@@ -23,7 +23,9 @@ header {
     
     
     &--come-out {
-      animation: show-up .3s;
+      @media(min-width: 1024px){
+        animation: show-up .3s;
+      }
     }
 
     h1 {
@@ -36,8 +38,12 @@ header {
     height: 3rem;
     display: flex;
     background-color: white;
-    padding: 0 1vw;
+    padding: 0 3vw;
     align-items: center;
+
+    @media(min-width: 1024px) {
+      padding: 0 1vw;
+    }
 
     &--sticky {
       position: fixed;
