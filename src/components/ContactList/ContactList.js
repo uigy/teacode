@@ -30,7 +30,12 @@ const ContactList = ({ contacts }) => {
   return (
     <ul className="contact-list">
       {contacts.map((contact) => (
-        <LazyLoad height={"4rem"} key={contact.id}>
+        <LazyLoad
+          height={"4rem"}
+          classNamePrefix={"contact-item"}
+          resize={true}
+          key={contact.id}
+        >
           <ContactItem
             contact={contact}
             isChecked={selectedContacts.includes(contact.id)}
